@@ -1,0 +1,14 @@
+{
+  "aria2-1.37.0": [
+    {
+      "name": "aria2-1.37.0-source.tar.xz",
+      "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz"
+    }
+  ],
+  "ffmpeg-8.1.3": [
+    {
+      "name": "ffmpeg-source-92611900bb.tar.gz",
+      "url": "https://github.com/FFmpeg/FFmpeg/archive/92611900bb112123e9bf997fdcc2d78e4c4922fc.tar.gz"
+    }
+  ]
+}

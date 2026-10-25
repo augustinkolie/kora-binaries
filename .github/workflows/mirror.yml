@@ -1,0 +1,25 @@
+name: Miroir des binaires
+
+on:
+  push:
+    branches: [main]
+    paths: [manifest.json, sources.json, scripts/mirror.py, .github/workflows/mirror.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger, vérifier (SHA-256) et publier
+        run: python3 scripts/mirror.py
+        env:
+          GH_TOKEN: ${{ github.token }}
